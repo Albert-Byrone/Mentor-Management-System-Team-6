@@ -1,16 +1,17 @@
-from typing import TypedDict
-from ..utils import EmptyDict
+from pydantic import BaseModel
+
 from .schemas import User
 from ..utils import ResponseModel
 
 
-class UserData(TypedDict):
-    user: User
-    access_token: str
+class UserData(BaseModel):
+    user: User | None
+    access_token: str | None
 
 
 class CreateUserResponse(ResponseModel):
-    data: UserData | EmptyDict = {}
+    data: UserData = UserData()
+
 
 class LoginUserResponse(ResponseModel):
-    data: UserData | EmptyDict = {}
+    data: UserData = UserData()

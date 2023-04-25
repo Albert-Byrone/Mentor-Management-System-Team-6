@@ -4,6 +4,7 @@ import { Form, Formik } from 'formik';
 
 function FormikForm({
   children,
+  styling,
   initialValues,
   validationSchema,
   ...props
@@ -11,11 +12,7 @@ function FormikForm({
   return (
     <div className={props.className}>
       <Formik initialValues={initialValues} validationSchema={validationSchema}>
-        {() => (
-          <Form className="flex justify-center items-center flex-col">
-            {children}
-          </Form>
-        )}
+        {() => <Form className={styling}>{children}</Form>}
       </Formik>
     </div>
   );

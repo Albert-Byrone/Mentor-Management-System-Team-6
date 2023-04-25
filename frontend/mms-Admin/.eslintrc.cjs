@@ -10,5 +10,20 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
-  rules: { 'linebreak-style': ['error', 'unix'] },
+  rules: {
+    'linebreak-style': ['error', 'unix'],
+    'object-curly-newline': [
+      'error',
+      {
+        ObjectExpression: 'always',
+        ObjectPattern: {
+          multiline: true,
+        },
+        ImportDeclaration: 'never',
+        ExportDeclaration: {
+          multiline: true, minProperties: 3,
+        },
+      },
+    ],
+  },
 };

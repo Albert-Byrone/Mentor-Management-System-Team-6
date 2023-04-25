@@ -1,0 +1,41 @@
+.faqsH {
+  color: #333;
+  font-size: 20px;
+  line-height: 33px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.faqs {
+  padding: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.accordionIcon {
+  color: #058b94;
+  font-size: 22px;
+  display: inline-block;
+}
+
+.accordionHeader {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+}
+
+.accordion h3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  color: #333;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.accordionBody p {
+  color: #333;
+  padding: 15px;
+  margin-bottom: 10px;
+}

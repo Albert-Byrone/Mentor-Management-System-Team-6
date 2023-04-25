@@ -1,32 +1,31 @@
 import os
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
-#Load Environment variables from .env file to Enviroment
+
+# Load environment variables from .env file
 load_dotenv()
 
-# Database admin Username
+# Retrieve environment variables for database configuration
 username = os.environ['DATABASE_USERNAME']
-# The name of the database in which the data is stored
 database = os.environ['DATABASE_NAME']
-# The Url or IP address of  the database
 host = os.environ['DATABASE_HOST']
-# The database admin password
 password = os.environ['DATABASE_PASSWORD']
-# The type of database or database Engine
 database_type = os.environ['DATABASE_TYPE']
+# Add port variable with a default value of 5432 if not specified
+port = os.environ.get('DATABASE_PORT', 5432)
 
-# The database Url containing all the information needed to connect
-SQLALCHEMY_DATABASE_URL = f"{database_type}://{username}:{password}@{host}/{database}"
+# Create the database URL using the retrieved environment variables
+db_url = f"{database_type}://{username}:{password}@{host}:{port}/{database}"
 
-# The database Engine Instance
+# Set up the SQLAlchemy engine
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL,
+    db_url,
 )
-#Database Connection Session Instance
+# Configure the session factory with the created engine
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# The Base Model for sqlalchemy models
+# Define the base class for the ORM models
 Base = declarative_base()
+# Create the tables in the database

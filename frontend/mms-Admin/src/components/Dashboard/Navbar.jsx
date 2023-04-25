@@ -1,11 +1,9 @@
 import React from 'react';
-import {
-  BrandLogo,
+import { BrandLogo,
   MessageIcon,
   NotificationBellIcon,
   SearchIcon,
-  UserAvatar,
-} from '../../assets/images';
+  UserAvatar } from '../../assets/images';
 
 function Navbar() {
   return (
@@ -27,7 +25,10 @@ function Navbar() {
           />
         </div>
         <MessageIcon styling="w-5 md:w-10 mx-1 md:mx-0" color="#F7FEFF" />
-        <NotificationBellIcon styling="w-5 md:w-10 mx-1 md:mx-0" color="#F7FEFF" />
+        <NotificationBellIcon
+          styling="w-5 md:w-10 mx-1 md:mx-0"
+          color="#F7FEFF"
+        />
         <UserAvatar styling="w-5 md:w-10 mx-1 md:mx-0" />
       </div>
     </nav>

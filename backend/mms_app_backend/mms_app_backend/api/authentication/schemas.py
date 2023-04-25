@@ -1,7 +1,8 @@
-from pydantic import BaseModel,EmailStr
+from fastapi_camelcase import CamelModel
+from pydantic import EmailStr
 
 
-class UserBase(BaseModel):
+class UserBase(CamelModel):
     email: EmailStr
     username: str
     first_name: str
@@ -10,12 +11,21 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: str
-class UserLogin(BaseModel):
+
+
+class UserLogin(CamelModel):
     email: EmailStr
     password: str
+
+
 class User(UserBase):
     id: int
     is_active: bool
 
     class Config:
         orm_mode = True
+
+
+class PasswordChange(CamelModel):
+    old_password: str
+    new_password: str

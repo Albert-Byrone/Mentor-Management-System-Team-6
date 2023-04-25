@@ -13,7 +13,9 @@ function PasswordResetModal() {
   const fade = {
     hidden: {
       opacity: 0,
-      transition: { delay: 1 },
+      transition: {
+        delay: 1,
+      },
     },
     visible: {
       opacity: 1,
@@ -23,7 +25,9 @@ function PasswordResetModal() {
     },
     exit: {
       opacity: 0,
-      transition: { delay: 1 },
+      transition: {
+        delay: 1,
+      },
     },
   };
   return (

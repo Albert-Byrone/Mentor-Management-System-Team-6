@@ -75,6 +75,11 @@ To get it up and running on your local machine, follow the steps below:
 
 
     pip install -r requirements.txt
+### Database setup
+    cd ./backend/mms_app_backend/mms_app_backend/configs
+
+### create database based on model revisions
+    alembic upgrade head 
 
 ## Environment variables
 

@@ -1,0 +1,23 @@
+.Notifications {
+  padding: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.NotificationsH {
+  color: #333;
+  font-size: 20px;
+  line-height: 33px;
+}
+
+.Notifications .head {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.Notifications .subHead {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 33px;
+}

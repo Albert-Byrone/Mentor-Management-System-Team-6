@@ -5,14 +5,14 @@ import { ErrorMessage, useField } from 'formik';
 import { PasswordEyeHide, PasswordEyeShow } from '../assets/images';
 
 function InputField({
-//   width,
+  //   width,
   type,
   label,
   styling,
+  inputStyle,
   ...props
 }) {
   const [field, meta] = useField(props);
-
   const [passwordType, setPasswordType] = useState(type);
 
   // Show and Hide Password Function
@@ -25,9 +25,10 @@ function InputField({
   };
   return (
     <div className={`w-full ${styling}`}>
-      <div className={`flex items-center border-[1px] rounded-[5px] border-black8 w-full ${
-        meta.touched && meta.error && 'border-sec1'
-      }`}
+      <div
+        className={`flex items-center border-[1px] rounded-[5px] border-black8 w-full ${
+          meta.touched && meta.error && 'border-sec1'
+        }`}
       >
         <input
           {...field}
@@ -35,11 +36,15 @@ function InputField({
           placeholder={props.placeholder}
           autoComplete="off"
           type={type === 'password' ? passwordType : type}
-          className="w-full h-full focus:outline-none bg-transparent pl-[30px] py-[8px] placeholder:text-black5 text-black5 text-mukta font-[400] text-[20px]"
+          className={`w-full h-full focus:outline-none bg-transparent py-[8px] placeholder:text-black5 text-black5 text-mukta font-[400] ${inputStyle}`}
         />
 
         {type === 'password' && (
-          <span onClick={togglePassword} className="mr-3 cursor-pointer" aria-hidden="true">
+          <span
+            onClick={togglePassword}
+            className="mr-3 cursor-pointer"
+            aria-hidden="true"
+          >
             {passwordType === 'password' ? (
               <PasswordEyeHide className="w-[24px]" />
             ) : (

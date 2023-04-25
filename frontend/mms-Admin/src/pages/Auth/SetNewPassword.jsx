@@ -48,6 +48,7 @@ function SetNewPassword() {
             name="password"
             placeholder="Password"
             width="w-full"
+            inputStyle="text-[20px] pl-[30px]"
           />
           <Button width="w-full mt-[28px]" onClick={handleSuccess}>Reset Password</Button>
         </FormikForm>

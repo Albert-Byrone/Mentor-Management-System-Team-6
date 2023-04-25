@@ -14,9 +14,7 @@ function GadsReportCard() {
             <div className="flex w-full items-center">
               <p className="font-[400] text-black5 text-[10px]">
                 <span className=" font-[600]">By Ibrahim Kabir - </span>
-                {' '}
-                19th -
-                25th Oct 22
+                19th - 25th Oct 22
               </p>
             </div>
           </div>

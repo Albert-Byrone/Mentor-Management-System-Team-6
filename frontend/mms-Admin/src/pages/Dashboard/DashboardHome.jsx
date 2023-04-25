@@ -1,11 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  MentorIcon,
+import { MentorIcon,
   MentorManagerIcon,
   ReportIcon,
-  TaskIcon,
-} from '../../assets/images';
+  TaskIcon } from '../../assets/images';
 import GadsCard from '../../components/Dashboard/DashboardCards/GadsCard';
 import GadsReportCard from '../../components/Dashboard/DashboardCards/GadsReportCard';
 import TasksCards from '../../components/Dashboard/DashboardCards/TasksCards';
@@ -186,9 +184,7 @@ function DashboardHome() {
             </h2>
           </div>
           {/* tasks in progress */}
-          <div
-            className="grid md:grid-cols-task gap-y-[20px] md:gap-y-0 gap-x-[20px]"
-          >
+          <div className="grid md:grid-cols-task gap-y-[20px] md:gap-y-0 gap-x-[20px]">
             <div className="w-full h-full bg-pri3 flex items-center justify-center rounded-[10px]">
               <p className="font-[600] text-pri11 text-[18px]">In Progress</p>
             </div>
@@ -199,9 +195,7 @@ function DashboardHome() {
           </div>
 
           {/* completed tasks */}
-          <div
-            className="grid md:grid-cols-task gap-y-[20px] md:gap-y-0 gap-x-[20px] mt-14"
-          >
+          <div className="grid md:grid-cols-task gap-y-[20px] md:gap-y-0 gap-x-[20px] mt-14">
             <div className="w-full h-full bg-pri3 flex items-center justify-center rounded-[10px]">
               <p className="font-[600] text-pri11 text-[18px]">Completed</p>
             </div>

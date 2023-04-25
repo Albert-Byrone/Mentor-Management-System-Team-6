@@ -5,11 +5,13 @@ import storage from 'redux-persist/lib/storage';
 import splashSlice from './features/splashSlice';
 import modalReducer from './features/NewPasswordSuccess/modalSlice';
 import sidebarSlice from './features/sidebarSlice';
+import profileSlice from './features/Profile/profileSlice';
 
 const rootReducer = combineReducers({
   splashScreen: splashSlice,
   modal: modalReducer,
   sidebar: sidebarSlice,
+  profile: profileSlice,
 });
 
 const persistConfig = {

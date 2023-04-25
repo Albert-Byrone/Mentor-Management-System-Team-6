@@ -1,16 +1,24 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import AuthHome from './pages/Auth/AuthHome';
-import ForgotPassword from './pages/Auth/ForgotPassword';
-import LoginPage from './pages/Auth/LoginPage';
-import SetNewPassword from './pages/Auth/SetNewPassword';
-import Dashboard from './pages/Dashboard/Dashboard';
-import DashboardHome from './pages/Dashboard/DashboardHome';
-import ErrorPage from './pages/Error/ErrorPage';
 import SplashScreen from './pages/SplashScreen/SplashScreen';
 import { stopLoader } from './redux/features/splashSlice';
-
+import Profile from './pages/Dashboard/Profile';
+import ErrorPage from './pages/Error/ErrorPage';
+import AuthHome from './pages/Auth/AuthHome';
+import LoginPage from './pages/Auth/LoginPage';
+import Dashboard from './pages/Dashboard/Dashboard';
+import ForgotPassword from './pages/Auth/ForgotPassword';
+import SetNewPassword from './pages/Auth/SetNewPassword';
+import DashboardHome from './pages/Dashboard/DashboardHome';
+import SettingsHome from './pages/Dashboard/Settings/SettingsHome';
+import Support from './pages/Dashboard/Settings/Support';
+import SettingsGeneral from './pages/Dashboard/Settings/SettingsGeneral';
+import SettingChangePassword from './pages/Dashboard/Settings/SettingChangePassword';
+import Faqs from './pages/Dashboard/Settings/Faqs/Faqs';
+import Notifications from './pages/Dashboard/Settings/Notifications/Notifications';
+import Privacy from './pages/Dashboard/Settings/Privacy';
+import Archive from './pages/Dashboard/Settings/Archive';
 // Moved the router here to be able to call the splash screen once to avoid redundant code.
 // This is were you add routes for the pages you are building
 const router = createBrowserRouter([
@@ -47,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'profile',
-        element: 'this is the profile',
+        element: <Profile />,
       },
       {
         path: 'programs',
@@ -87,7 +95,37 @@ const router = createBrowserRouter([
       },
       {
         path: 'settings',
-        element: 'this is the settings',
+        element: <SettingsHome />,
+        children: [
+          {
+            path: '',
+            element: <SettingsGeneral />,
+          },
+          {
+            path: 'password',
+            element: <SettingChangePassword />,
+          },
+          {
+            path: 'notifications',
+            element: <Notifications />,
+          },
+          {
+            path: 'privacy',
+            element: <Privacy />,
+          },
+          {
+            path: 'archive',
+            element: <Archive />,
+          },
+          {
+            path: 'support',
+            element: <Support />,
+          },
+          {
+            path: 'faq',
+            element: <Faqs />,
+          },
+        ],
       },
     ],
   },
@@ -97,7 +135,7 @@ export default function App() {
   const dispatch = useDispatch();
   // Get the isloaded state
   const isLoaded = useSelector((state) => state.splashScreen.isLoaded);
-  setTimeout(() => dispatch(stopLoader()), 2000);
+  setTimeout(() => dispatch(stopLoader()), 500);
   // return the splash screen if the isloaded state is false
   return !isLoaded ? <SplashScreen /> : <RouterProvider router={router} />;
 }

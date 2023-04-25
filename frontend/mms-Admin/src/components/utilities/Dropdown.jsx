@@ -63,7 +63,9 @@ function Dropdown({ options, placeHolder }) {
     closed: {
       opacity: 0,
     },
-    open: { opacity: 1, transition: 2 },
+    open: {
+      opacity: 1, transition: 2,
+    },
     exit: {
       opacity: 0,
     },

@@ -43,6 +43,7 @@ export default {
       },
       gridTemplateColumns: {
         task: '12.5% repeat(3, 1fr)',
+        socials: '40% repeat(1, 1fr)',
       },
     },
   },

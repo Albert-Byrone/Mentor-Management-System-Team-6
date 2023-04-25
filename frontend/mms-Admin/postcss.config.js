@@ -1,13 +1,12 @@
 export default {
-
   plugins: {
+    'postcss-import': {
+    },
 
-    'postcss-import': {},
+    tailwindcss: {
+    },
 
-    tailwindcss: {},
-
-    autoprefixer: {},
-
+    autoprefixer: {
+    },
   },
-
 };

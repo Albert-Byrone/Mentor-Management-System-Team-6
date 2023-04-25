@@ -1,0 +1,21 @@
+name: Sync with Upstream
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run daily at midnight
+  workflow_dispatch:   # Allow manual triggering
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Sync with upstream repository
+        uses: aormsby/Fork-Sync-With-Upstream-action@v2.3
+        with:
+          upstream_repository: ALCOpenSource/Mentor-Management-System-Team-6
+          target_branch: develop
+          git_pull_strategy: merge
+          github_token: ${{ secrets.GITHUB_TOKEN }}
